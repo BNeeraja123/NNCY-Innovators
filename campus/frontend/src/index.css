@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Tailwind component classes */
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-shadow;
+  }
+  
+  .card:hover {
+    @apply shadow-lg;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white font-bold py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-primary-light;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-bold py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .btn-outline:hover {
+    @apply bg-primary text-white;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scrolling-text {
+  animation: scroll 15s linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+}
